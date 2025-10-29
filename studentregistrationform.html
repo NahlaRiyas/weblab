@@ -1,0 +1,162 @@
+<html>
+<head>
+<style>
+body{
+font-family:Arial,san-serif;
+background-color:white;
+}
+h1{
+text-align:center;
+font-size:24;
+}
+.table{
+border:2px solid black;
+width:950px;
+
+border-collapse:collapse;
+border-spacing: 0px; 
+}
+.table td{
+ padding: 6px;  
+ border: 1px solid black; 
+ font-size:15;
+ }
+.table tr{
+border: 1px solid black; 
+}
+</style>
+</head>
+<body>
+<h1>STUDENT REGISTRATION FORM</h2>
+<form action="#" method="post">
+<table class="table">
+<tr>
+<td>FIRST NAME:</td>
+<td><input type="text" name="first_name" required>(Max 10 characters)</td>
+</tr>
+<tr>
+<td>LAST NAME:</td>
+<td><input type="text" name="last_name" required>(Max 10 characters)</td>
+</tr>
+<tr>  
+<td>DATE OF BIRTH</td>
+<td> <input type="date" id="dob" name="date of birth" required></td>
+</tr>
+<tr>
+<td>EMAIL ID</td>
+<td><input type="email" id="email" name="email" required></td>
+</tr>
+<tr>
+<td>MOBILE NUMBER</td>
+<td><input type="number" id="mobile" name="mobile" maxlength="10" required></td>
+</tr>
+<tr>
+<td>GENDER</td>
+<td>
+<input type="radio" id="male" name="gender" value="male" required>Male
+<input type="radio" id="female" name="gender" value="female" required>Female
+<input type="radio" id="other" name="gender" value="other" required>Other
+</td>
+</tr>
+<tr colspan="2">
+<td>ADDRESS</td>
+<td><textarea id="address" name="address" rows="4" cols="40" required></textarea></td>
+</tr>
+<tr>
+<td>CITY</td>
+<td>
+<input type="text" id="city" name="city" maxlength=10 required>(Max 10 characters)</td>
+</tr>
+<tr>
+<td>PINCODE</td>
+<td>
+<input type="number" id="pincode" name="pincode" maxlength="6" required>(6 digit number)</td>
+</tr>
+<tr>
+<td>STATE</td>
+<td>
+<input type="text" id="state" name="state" maxlength="10" required>(Max 10 character)</td>
+</tr>
+<tr>
+<td>COUNTRY</td>
+<td>
+<input type="text" id="country" name="country" required></td>
+</tr>
+<tr>
+<td>HOBBIES</td>
+<td>
+<input type="checkbox" id="DRAWING" name="hobbies" value="DRAWING" required>DRAWING
+<input type="checkbox" id="SWIMMING" name="hobbies" value="SWIMMING" required>SWIMMING
+<input type="checkbox" id="SINGING" name="hobbies" value="SINGING" required>SINGING
+<input type="checkbox" id="OTHERS" name="hobbies" value="OTHERS" required>OTHERS
+</td>
+</tr>
+<tr colspan="5">
+<td>QUALIFICATION</td>
+<td>
+<table border="2px" border-spacing="0px" border-collapse="collapse">
+<tr>
+<th>siNo</th>
+<th>Examination</th>
+<th>Board</th>
+<th>Percentage</th>
+<th>Year of Passing</th>
+</tr>
+<tr>
+<td>1</td>
+<td>class X</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year of passing" required></td>
+</tr>
+<tr>
+<td>2</td>
+<td>class XII</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year of passing" required></td>
+</tr>
+<tr>
+<td>3</td>
+<td>GRADUATION</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year of passing" required></td>
+</tr>
+<tr>
+<td>4</td>
+<td>MASTERS</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year of passing" required></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>COURSE APPLIED FOR</td>
+<td>
+<input type="radio" id="Mca" name="course" value="Mca" required>Mca
+<input type="radio" id="M.Tech" name="course" value="M.Tech" required>M.Tech
+<input type="radio" id="Msc" name="course" value="Msc" required>Msc
+</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td>
+<input type="password" id="password" name="password" maxlength=8 required>(Max 8 characters)</td>
+</tr>
+<tr>
+<td>DATE OF TC</td>
+<td> <input type="date" id="dob" name="date of tc" required></td>
+</tr>
+<tr>
+<td colspan=2 align="center"> 
+<input type="submit" value="SUBMIT" required>
+<input type="reset" value="RESET" required>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

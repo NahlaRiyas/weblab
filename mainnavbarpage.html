@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+.navbar {
+  background-color: green;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+}
+.navbar a {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: red;
+}
+.contents {
+  margin-left: 220px; 
+  padding: 10px;
+}
+iframe {
+  height: 90vh;
+  width: 100%;
+  border: none;
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+  <a href="aboutus.html" target="frames">ABOUT US</a>
+  <a href="departments.html" target="frames">DEPARTMENTS</a>
+  <a href="visionmission.html" target="frames">VISION/MISSION</a>
+  <a href="contactus.html" target="frames">CONTACT US</a>
+</div>
+
+<div class="contents">
+  <iframe src="aboutus.html" name="frames"></iframe>
+</div>
+</body>
+</html>
+
