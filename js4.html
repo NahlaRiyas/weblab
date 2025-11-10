@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+h1{
+    text-align: center;
+    font-size: 24px;
+}
+.table{
+    border: 2px solid black;
+    width: 950px;
+    margin: auto;
+    border-collapse: collapse;
+}
+.table td{
+    padding: 6px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.table tr{
+    border: 1px solid black;
+}
+</style>
+<script>
+function validateForm() {
+    // Get form elements
+    let firstName = document.forms["regForm"]["first_name"].value.trim();
+    let lastName = document.forms["regForm"]["last_name"].value.trim();
+    let email = document.forms["regForm"]["email"].value.trim();
+    let mobile = document.forms["regForm"]["mobile"].value.trim();
+    let imageFile = document.forms["regForm"]["image"].value;
+
+    // Name validation (only letters, max 10)
+    let namePattern = /^[A-Za-z]{1,10}$/;
+    if (!namePattern.test(firstName)) {
+        alert("First Name must contain only letters and be up to 10 characters.");
+        return false;
+    }
+    if (!namePattern.test(lastName)) {
+        alert("Last Name must contain only letters and be up to 10 characters.");
+        return false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // Mobile validation (10 digits only)
+    let mobilePattern = /^[0-9]{10}$/;
+    if (!mobilePattern.test(mobile)) {
+        alert("Mobile number must be exactly 10 digits.");
+        return false;
+    }
+
+    // Image file validation
+    if (imageFile === "") {
+        alert("Please upload an image file.");
+        return false;
+    } else {
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowedExtensions.exec(imageFile)) {
+            alert("Please upload file having extensions .jpeg/.jpg/.png only.");
+            return false;
+        }
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+</script>
+</head>
+<body>
+<h1>STUDENT REGISTRATION FORM</h1>
+<form name="regForm" action="#" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+<table class="table">
+<tr>
+<td>FIRST NAME:</td>
+<td><input type="text" name="first_name" maxlength="10" required> (Max 10 characters)</td>
+</tr>
+<tr>
+<td>LAST NAME:</td>
+<td><input type="text" name="last_name" maxlength="10" required> (Max 10 characters)</td>
+</tr>
+<tr>  
+<td>DATE OF BIRTH</td>
+<td><input type="date" name="date_of_birth" required></td>
+</tr>
+<tr>
+<td>EMAIL ID</td>
+<td><input type="email" name="email" required></td>
+</tr>
+<tr>
+<td>MOBILE NUMBER</td>
+<td><input type="text" name="mobile" maxlength="10" required> (10 digits)</td>
+</tr>
+<tr>
+<td>GENDER</td>
+<td>
+<input type="radio" name="gender" value="male" required>Male
+<input type="radio" name="gender" value="female" required>Female
+<input type="radio" name="gender" value="other" required>Other
+</td>
+</tr>
+<tr>
+<td>ADDRESS</td>
+<td><textarea name="address" rows="4" cols="40" required></textarea></td>
+</tr>
+<tr>
+<td>CITY</td>
+<td><input type="text" name="city" maxlength="10" required> (Max 10 characters)</td>
+</tr>
+<tr>
+<td>PINCODE</td>
+<td><input type="number" name="pincode" maxlength="6" required> (6 digits)</td>
+</tr>
+<tr>
+<td>STATE</td>
+<td><input type="text" name="state" maxlength="10" required> (Max 10 characters)</td>
+</tr>
+<tr>
+<td>COUNTRY</td>
+<td><input type="text" name="country" required></td>
+</tr>
+<tr>
+<td>HOBBIES</td>
+<td>
+<input type="checkbox" name="hobbies" value="DRAWING">Drawing
+<input type="checkbox" name="hobbies" value="SWIMMING">Swimming
+<input type="checkbox" name="hobbies" value="SINGING">Singing
+<input type="checkbox" name="hobbies" value="OTHERS">Others
+</td>
+</tr>
+<tr>
+<td>QUALIFICATION</td>
+<td>
+<table border="2" style="border-collapse:collapse; width:100%;">
+<tr>
+<th>Sl.No</th>
+<th>Examination</th>
+<th>Board</th>
+<th>Percentage</th>
+<th>Year of Passing</th>
+</tr>
+<tr>
+<td>1</td><td>Class X</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year_of_passing" required></td>
+</tr>
+<tr>
+<td>2</td><td>Class XII</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year_of_passing" required></td>
+</tr>
+<tr>
+<td>3</td><td>Graduation</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year_of_passing" required></td>
+</tr>
+<tr>
+<td>4</td><td>Masters</td>
+<td><input type="text" name="board" required></td>
+<td><input type="number" name="percentage" required></td>
+<td><input type="number" name="year_of_passing" required></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>COURSE APPLIED FOR</td>
+<td>
+<input type="radio" name="course" value="MCA" required>MCA
+<input type="radio" name="course" value="M.Tech" required>M.Tech
+<input type="radio" name="course" value="MSc" required>MSc
+</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td><input type="password" name="password" maxlength="8" required> (Max 8 characters)</td>
+</tr>
+<tr>
+<td>UPLOAD IMAGE</td>
+<td><input type="file" name="image" accept=".jpg, .jpeg, .png" required></td>
+</tr>
+<tr>
+<td>DATE OF TC</td>
+<td><input type="date" name="date_of_tc" required></td>
+</tr>
+<tr>
+<td colspan="2" align="center"> 
+<input type="submit" value="SUBMIT">
+<input type="reset" value="RESET">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
